@@ -10,7 +10,7 @@ class App extends React.Component {
     this.callApi = this.callApi.bind(this);
   }
 
-  async callApi() {
+  callApi() {
     fetch("/api/beers")
       .then(res => res.json())
       .then(data => {
