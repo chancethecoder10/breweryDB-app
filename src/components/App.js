@@ -4,7 +4,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      beers: {},
+      data: {},
       loading: true
     };
     this.callApi = this.callApi.bind(this);
@@ -14,8 +14,8 @@ class App extends React.Component {
     fetch("/api/beers")
       .then(res => res.json())
       .then(data => {
-        console.log(data);
-        this.setState({ beers: data });
+        console.log(data.data);
+        this.setState({ data: data.data });
       });
   }
 
