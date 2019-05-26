@@ -14,8 +14,10 @@ class App extends React.Component {
     fetch("/api/beers")
       .then(res => res.json())
       .then(data => {
-        console.log(data);
-        this.setState({ data: data.data });
+        console.log(data.data);
+        if (data.data.status === "success") {
+          this.setState({ data: data.data });
+        }
       });
   }
 
