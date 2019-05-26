@@ -11,7 +11,7 @@ class App extends React.Component {
   }
 
   callApi() {
-    fetch("/api/beers")
+    fetch("/.netlify/functions/api/beers")
       .then(res => res.json())
       .then(data => {
         console.log(data.data);

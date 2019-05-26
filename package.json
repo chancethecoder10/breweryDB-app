@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "netlify-lambda": "^1.4.13",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.0"
@@ -12,7 +13,7 @@
     "start": "run-p start:**",
     "start:app": "react-scripts start",
     "start:server": "node-env-run server --exec nodemon | pino-colada",
-    "build": "react-scripts build",
+    "build": "react-scripts build && netlify-lambda build server",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

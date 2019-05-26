@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(pino);
 
-app.get("/api/beers", async (req, res) => {
+app.get("/.netlify/functions/api/beers", async (req, res) => {
   let data;
   res.setHeader("Content-Type", "application/json");
   await axios
