@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "node ./create-redirects.js && react-scripts build",
+    "build": "react-scripts build && node ./create-redirects.js",
     "eject": "react-scripts eject",
     "server": "node-env-run server --exec nodemon | pino-colada",
     "dev": "run-p server start"
