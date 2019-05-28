@@ -11,22 +11,29 @@ class App extends React.Component {
   }
 
   callApi() {
-    fetch("/.netlify/functions/api/beers")
-      .then(res => res.json())
+    fetch("/beers", {
+      headers: { "Content-Type": "application/json" }
+    })
+      .then(res => {
+        if (res.ok) return res.json();
+        return null;
+      })
       .then(data => {
-        console.log(data.data);
-        if (data.data.status === "success") {
-          this.setState({ data: data.data });
-        }
+        console.log(data);
+        this.setState({ data });
+      })
+      .catch(err => {
+        console.error(err);
+        return err;
       });
   }
 
-  componentDidMount() {
-    this.callApi();
-  }
-
   render() {
-    return <div className="App">hiiiiii</div>;
+    return (
+      <div className="App">
+        <button onClick={() => this.callApi()}>call api</button>
+      </div>
+    );
   }
 }
 
