@@ -11,25 +11,16 @@ class App extends React.Component {
   }
 
   async callApi() {
-    await fetch("/.netlify/functions/index/beers", {
+    await fetch("/api/beers", {
       headers: { "Content-Type": "application/json" }
     })
       .then(res => {
-        console.log(res);
-        if (res.ok) return res;
+        if (res.ok) return res.json();
         return null;
       })
       .then(data => {
-        const readData = data.body
-          .getReader()
-          .read()
-          .then(({ done, value }) => {
-            return value;
-          });
-        console.log(readData);
-        return readData;
-        // console.log(data);
-        // this.setState({ data });
+        console.log(data);
+        return data;
       })
       .catch(err => {
         console.error(err);
