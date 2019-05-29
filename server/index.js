@@ -2,6 +2,7 @@ import express from "express";
 import serverless from "serverless-http";
 import bodyParser from "body-parser";
 import cors from "cors";
+import compression from "compression";
 import fetch from "node-fetch";
 require("dotenv").config();
 
@@ -9,6 +10,9 @@ require("dotenv").config();
 exports.handler = (event, context, callback) => {
   const app = express();
   const router = express.Router();
+
+  // gzip responses
+  router.use(compression());
 
   // Apply express middlewares
   router.use(cors());
