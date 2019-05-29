@@ -12,7 +12,10 @@ class App extends React.Component {
 
   async callApi() {
     await fetch("/.netlify/functions/index/beers", {
-      headers: { "Content-Type": "application/json" }
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      }
     })
       .then(res => {
         console.log(res);
