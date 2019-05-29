@@ -24,8 +24,7 @@ class App extends React.Component {
           .getReader()
           .read()
           .then(({ done, value }) => {
-            if (!done) return value;
-            return false;
+            return value;
           });
         console.log(readData);
         return readData;
