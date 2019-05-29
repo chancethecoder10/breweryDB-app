@@ -20,10 +20,15 @@ class App extends React.Component {
         return null;
       })
       .then(data => {
-        const readData = data.body.getReader().read().then(({ done, value }) => {
-          if(!done) return value
-          return false
-        }
+        const readData = data.body
+          .getReader()
+          .read()
+          .then(({ done, value }) => {
+            if (!done) return value;
+            return false;
+          });
+        console.log(readData);
+        return readData;
         // console.log(data);
         // this.setState({ data });
       })
