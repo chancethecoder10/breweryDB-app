@@ -10,8 +10,8 @@ class App extends React.Component {
     this.callApi = this.callApi.bind(this);
   }
 
-  callApi() {
-    fetch("/.netlify/functions/index/beers", {
+  async callApi() {
+    await fetch("/.netlify/functions/index/beers", {
       headers: { "Content-Type": "application/json" }
     })
       .then(res => {
