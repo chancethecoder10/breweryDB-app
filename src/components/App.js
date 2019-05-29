@@ -11,7 +11,7 @@ class App extends React.Component {
   }
 
   callApi() {
-    fetch("/beers", {
+    fetch("/.netlify/functions/index/beers", {
       headers: { "Content-Type": "application/json" }
     })
       .then(res => {

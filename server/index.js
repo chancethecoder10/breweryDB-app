@@ -20,14 +20,14 @@ exports.handler = (event, context, callback) => {
   router.use(bodyParser.urlencoded({ extended: true }));
 
   // Set router base path for local dev
-  const routerBasePath = `/.netlify/functions`;
+  const routerBasePath = `/.netlify/functions/index`;
 
   /* define routes */
   router.get("/", (req, res) =>
     res.send({ statusCode: 200, body: { message: "invalid route" } })
   );
 
-  router.get("/beers", async () => {
+  router.get(routerBasePath + "/beers", async () => {
     try {
       const res = await fetch(
         `https://sandbox-api.brewerydb.com/v2/beers/?key=${process.env.API_KEY}`
