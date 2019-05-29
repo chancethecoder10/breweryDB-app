@@ -15,6 +15,7 @@ class App extends React.Component {
       headers: { "Content-Type": "application/json" }
     })
       .then(res => {
+        console.log(res);
         if (res.ok) return res.json();
         return null;
       })
