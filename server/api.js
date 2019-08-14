@@ -4,7 +4,14 @@ require("dotenv").config();
 exports.handler = async (event, context, callback) => {
   try {
     const response = await fetch(
-      `https://sandbox-api.brewerydb.com/v2/beers/?key=${process.env.API_KEY}`
+      `https://sandbox-api.brewerydb.com/v2/beers/?key=${process.env.API_KEY}`,
+      {
+        method: "GET",
+        headers: {
+          "access-control-allow-origin": "*",
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      }
     );
 
     if (!response.ok) {
