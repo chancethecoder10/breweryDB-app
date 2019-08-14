@@ -3,7 +3,7 @@ import "./App.css";
 
 function App() {
   const callApi = async () => {
-    await fetch("/api", {
+    await fetch("/.netlify/functions/api", {
       headers: { "Content-Type": "application/json" }
     })
       .then(res => {
