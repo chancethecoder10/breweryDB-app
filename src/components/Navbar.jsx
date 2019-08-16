@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../images/logo.svg";
+import logo from "../images/cask.svg";
 import searchIcon from "../images/search.svg";
 
 const Header = styled.header`
@@ -20,12 +20,22 @@ const Header = styled.header`
   );
 `;
 
-const Logo = styled.div`
-  background: url(${logo}) center bottom no-repeat;
+const Logo = styled.a.attrs(() => ({
+  href: "/"
+}))`
+  text-decoration: none;
+  background: url(${logo}) 1em bottom no-repeat;
   background-size: contain;
-  width: 9em;
+  width: 17em;
   height: 100%;
+  color: #fff;
+  padding-bottom: 0.2 em;
+  text-align: center;
   border: none;
+
+  :hover {
+    text-decoration: underline;
+  }
 `;
 
 const Search = styled.div`
@@ -36,13 +46,17 @@ const Search = styled.div`
   margin-right: 2em;
 `;
 
-const SearchField = styled.input`
+const SearchField = styled.input.attrs(props => ({
+  placeholder: "Search..."
+}))`
   width: 16em;
   height: 2.1em;
   padding-left: 0.8em;
   border: none;
   border-radius: 1em;
   color: white;
+  font-size: 1.1em;
+  font-family: monospace;
   background: rgb(212, 212, 212);
   background: linear-gradient(
     90deg,
@@ -65,7 +79,9 @@ const SearchIcon = styled.div`
 function Navbar() {
   return (
     <Header>
-      <Logo />
+      <Logo>
+        <h3>Brewery App</h3>
+      </Logo>
       <Search>
         <SearchIcon />
         <SearchField />
