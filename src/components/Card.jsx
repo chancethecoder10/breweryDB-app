@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Beer from "../images/beer.svg";
+import Beer from "../images/beer.png";
 
 const Wrapp = styled.div`
   display: flex;
@@ -24,7 +24,7 @@ function Card(props) {
       {props.itemData.hasOwnProperty("labels") ? (
         <img src={props.itemData.labels.medium} alt={props.name} />
       ) : (
-        <img src={Beer} alt={props.name} />
+        <img style={{ backgroundColor: "white" }} src={Beer} alt={props.name} />
       )}
       <h1>{props.name}</h1>
     </Wrapp>
