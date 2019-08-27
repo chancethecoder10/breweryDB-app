@@ -6,17 +6,15 @@ import searchIcon from "../images/search.svg";
 const Header = styled.header`
   display: flex;
   flex: 1;
-  width: 100%;
   height: 4em;
   align-items: center;
   justify-content: space-between;
   padding: 0.3em;
-  background: rgb(224, 0, 0);
+  background: rgb(255, 94, 0);
   background: linear-gradient(
     90deg,
-    rgba(224, 0, 0, 0.9332107843137255) 15%,
-    rgba(255, 108, 50, 0.865983893557423) 61%,
-    rgba(255, 50, 99, 1) 100%
+    rgba(255, 94, 0, 0.87718837535014) 0%,
+    rgba(255, 0, 0, 0.9360119047619048) 100%
   );
 `;
 

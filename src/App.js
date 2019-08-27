@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
+import Card from "./components/Card";
+import styled from "styled-components";
 
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
 function App() {
   const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const callApi = async () => {
     await fetch("/.netlify/functions/api", {
@@ -15,6 +22,7 @@ function App() {
       .then(res => {
         if (res) {
           setData(res.data);
+          setLoading(false);
           console.log(res.data);
         }
         return res;
@@ -26,10 +34,29 @@ function App() {
   };
 
   useEffect(() => {
-    // callApi();
+    callApi();
   }, []);
 
-  return <Navbar />;
+  return (
+    <div>
+      <Navbar />
+      <Container>
+        {!loading ? (
+          Object.values(data).map(element => {
+            return (
+              <Card
+                key={element.id}
+                name={element.nameDisplay}
+                itemData={element}
+              />
+            );
+          })
+        ) : (
+          <h1>Loading ...</h1>
+        )}
+      </Container>
+    </div>
+  );
 }
 
 export default App;
