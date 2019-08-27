@@ -10,11 +10,11 @@ const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 0.3em;
-  background: rgb(255, 94, 0);
+  background: rgb(32, 32, 32);
   background: linear-gradient(
     90deg,
-    rgba(255, 94, 0, 0.87718837535014) 0%,
-    rgba(255, 0, 0, 0.9360119047619048) 100%
+    rgba(32, 32, 32, 0.9023984593837535) 0%,
+    rgba(15, 0, 0, 0.9220063025210083) 100%
   );
 `;
 
