@@ -52,7 +52,7 @@ function App() {
             );
           })
         ) : (
-          <div class="loader">Loading...</div>
+          <div className="loader">Loading...</div>
         )}
       </Container>
     </div>

@@ -6,16 +6,11 @@ const Wrapp = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
+  padding: 0.7em;
   width: 15em;
+  border: solid 1px black;
+  border-radius: 1em;
   margin: 1em 0.5em;
-  padding: 1em;
-  background: rgb(255, 21, 21);
-  background: radial-gradient(
-    circle,
-    rgba(255, 21, 21, 0.7035189075630253) 5%,
-    rgba(119, 119, 119, 0.8491771708683473) 67%
-  );
-  border-radius: 0.3em;
 `;
 
 function Card(props) {
@@ -26,7 +21,7 @@ function Card(props) {
       ) : (
         <img style={{ backgroundColor: "white" }} src={Beer} alt={props.name} />
       )}
-      <h1>{props.name}</h1>
+      <h2>{props.name}</h2>
     </Wrapp>
   );
 }
