@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "encoding": "^0.1.12",
     "netlify-lambda": "^1.4.13",
     "node-fetch": "^2.6.0",
     "react": "^16.9.0",
